@@ -1,0 +1,26 @@
+{
+  "name": "joshuacrass.com",
+  "scripts": {
+    "dev": "parcel index.html",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "parcel": "^2.10.3",
+    "prettier": "^3.1.0",
+    "process": "^0.11.10"
+  }
+}
