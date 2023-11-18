@@ -24,3 +24,6 @@ yarn.lock
 .env.development
 .env.test
 .env.production
+
+# Ignore cache files
+.parcel-cache/

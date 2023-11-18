@@ -2,6 +2,7 @@
   "name": "joshuacrass.com",
   "scripts": {
     "dev": "parcel index.html",
+    "build": "parcel build ./index.html",
     "lint": "eslint ./src"
   },
   "dependencies": {
