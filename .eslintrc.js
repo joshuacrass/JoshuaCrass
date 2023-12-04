@@ -4,6 +4,13 @@ module.exports = {
   plugins: ['react', 'jsx-a11y', 'import'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'function-expression',
+      },
+    ],
   },
   ignorePatterns: ['dist/'],
   env: {
