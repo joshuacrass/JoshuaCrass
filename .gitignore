@@ -26,4 +26,4 @@ yarn.lock
 .env.production
 
 # Ignore cache files
-.parcel-cache/
+.parcel-cache
