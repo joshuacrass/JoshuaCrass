@@ -35,7 +35,7 @@ const App = () => (
       <h1>Header Component</h1>
     </Header>
     {sections.map((section) => (
-      <Section key={section.id}>{section.name}</Section>
+      <Section key={section.id} title={section.name} />
     ))}
   </Container>
 );
