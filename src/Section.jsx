@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-const Container = styled.div`
+const StyledSection = styled.div`
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr; /* Single column layout for mobile */
@@ -22,8 +22,7 @@ const LeftCol = styled.div`
   }
 `;
 
-const Content = styled.div`
-  background-color: #a33434;
+const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,6 +50,12 @@ const Header = styled.div`
   display: flex;
 `;
 
+const Contents = styled.div`
+  display: flex;
+  background-color: #a33434;
+  transition: height 0.3s ease-in-out;
+`;
+
 const SectionIcon = styled.div`
   background-color: #347ea3;
   height: 60px;
@@ -72,21 +77,23 @@ const Section = ({ title }) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <Container>
+    <StyledSection>
       <LeftCol>
         <SectionIcon />
       </LeftCol>
-      <Content>
+      <Container>
         <Header>
           <SectionTitle>{title}</SectionTitle>
         </Header>
-        <p>Content Component</p>
-      </Content>
+        <Contents>
+          <p>Container Component</p>
+        </Contents>
+      </Container>
       <RightCol>
         <SectionIcon />
         <SectionIcon />
       </RightCol>
-    </Container>
+    </StyledSection>
   );
 };
 

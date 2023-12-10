@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Section from './Section';
+import Section from './components/Sections';
 
 const Container = styled.div`
   width: 90%; /* Increase the width for larger screens */
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #000000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,11 +21,18 @@ const Header = styled.div`
   align-items: center;
 `;
 
+const SectionWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+`;
+
 const sections = [
-  { id: 1, name: 'intro' },
-  { id: 2, name: 'experience' },
-  { id: 3, name: 'education' },
-  { id: 4, name: 'skills' },
+  { id: 1, name: 'intro', color: '#1bc9e4', icon: 'profile' },
+  { id: 2, name: 'experience', color: '#ff754a', icon: 'hamburger' },
+  { id: 3, name: 'education', color: '#1be489', icon: 'school' },
+  { id: 4, name: 'skills', color: '#ffc455', icon: 'toolbox' },
+  { id: 6, name: 'contact', color: '#ff3430', icon: 'contact' },
 ];
 
 const App = () => (
@@ -35,7 +41,14 @@ const App = () => (
       <h1>Header Component</h1>
     </Header>
     {sections.map((section) => (
-      <Section key={section.id} title={section.name} />
+      <SectionWrapper>
+        <Section
+          key={section.id}
+          title={section.name}
+          color={section.color}
+          icon={section.icon}
+        />
+      </SectionWrapper>
     ))}
   </Container>
 );
