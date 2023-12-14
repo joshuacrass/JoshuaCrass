@@ -2,26 +2,7 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCoffee,
-  faBars,
-  faSchool,
-  faUser,
-  faToolbox,
-  faPhone,
-  faAngleDown,
-} from '@fortawesome/free-solid-svg-icons';
-
-const icons = {
-  coffee: faCoffee,
-  hamburger: faBars,
-  school: faSchool,
-  profile: faUser,
-  toolbox: faToolbox,
-  contact: faPhone,
-  // Add other icons here
-};
+import Icon from './Icon';
 
 const SectionWrapper = styled.div`
   display: flex;
@@ -150,7 +131,7 @@ const Section = ({ title, color, icon }) => {
   return (
     <SectionWrapper>
       <SectionIcon color={color} onClick={() => setVisible(!visible)}>
-        <FontAwesomeIcon icon={icons[icon]} size='3x' />
+        <Icon iconName={icon} size='2x' />
       </SectionIcon>
       <SectionMarker visible={visible} color={color} />
       <SectionMain>
@@ -160,7 +141,7 @@ const Section = ({ title, color, icon }) => {
             <SectionTitleActive style={animationTitleProps} color={color} />
           </SectionTitleWrapper>
           <SectionToggle visible={visible}>
-            <FontAwesomeIcon icon={faAngleDown} size='xl' />
+            <Icon iconName='ChevronDown' />
           </SectionToggle>
         </Header>
         <SectionContent style={animationProps}>
@@ -193,11 +174,13 @@ const Section = ({ title, color, icon }) => {
 Section.propTypes = {
   title: PropTypes.string,
   color: PropTypes.string,
+  icon: PropTypes.string,
 };
 
 Section.defaultProps = {
   title: 'Section Title',
   color: '#000000',
+  icon: 'QuestionCircle',
 };
 
 export default Section;

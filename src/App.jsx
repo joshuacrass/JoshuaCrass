@@ -28,11 +28,11 @@ const SectionWrapper = styled.div`
 `;
 
 const sections = [
-  { id: 1, name: 'intro', color: '#1bc9e4', icon: 'profile' },
-  { id: 2, name: 'experience', color: '#ff754a', icon: 'hamburger' },
-  { id: 3, name: 'education', color: '#1be489', icon: 'school' },
-  { id: 4, name: 'skills', color: '#ffc455', icon: 'toolbox' },
-  { id: 6, name: 'contact', color: '#ff3430', icon: 'contact' },
+  { id: 1, name: 'intro', color: '#1bc9e4', icon: 'User' },
+  { id: 2, name: 'experience', color: '#ff754a', icon: 'Bars' },
+  { id: 3, name: 'education', color: '#1be489', icon: 'School' },
+  { id: 4, name: 'skills', color: '#ffc455', icon: 'Toolbox' },
+  { id: 6, name: 'contact', color: '#ff3430', icon: 'Phone' },
 ];
 
 const App = () => (
