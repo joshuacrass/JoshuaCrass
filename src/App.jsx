@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Section from './components/Sections';
+import Header from './components/Header';
 
 const Container = styled.div`
   width: 90%; /* Increase the width for larger screens */
@@ -10,15 +11,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-`;
-
-const Header = styled.div`
-  color: #000000;
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 `;
 
 const SectionWrapper = styled.div`
@@ -61,9 +53,7 @@ const sections = [
 
 const App = () => (
   <Container>
-    <Header>
-      <h1>Header Component</h1>
-    </Header>
+    <Header />
     {sections.map((section) => (
       <SectionWrapper>
         <Section
