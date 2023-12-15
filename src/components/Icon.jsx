@@ -1,26 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as Icons from '@fortawesome/free-solid-svg-icons';
+import * as SolidIcons from '@fortawesome/free-solid-svg-icons';
+import * as BrandIcons from '@fortawesome/free-brands-svg-icons';
 
-const Icon = ({ iconName, size }) => {
-  const defaultIcon = Icons.faQuestionCircle;
-  const formattedIconName = `fa${
-    iconName.charAt(0).toUpperCase() + iconName.slice(1)
-  }`;
-  const icon = Icons[formattedIconName] || defaultIcon;
+const Icon = ({ iconName, size, iconType }) => {
+  let icon;
+  if (iconType === 'brand') {
+    icon =
+      BrandIcons[`fa${iconName.charAt(0).toUpperCase() + iconName.slice(1)}`];
+  } else {
+    // default to solid if iconType is not 'brand'
+    icon =
+      SolidIcons[`fa${iconName.charAt(0).toUpperCase() + iconName.slice(1)}`];
+  }
+
+  // Fallback to a default icon if icon is not found
+  const defaultIcon = SolidIcons.faQuestionCircle;
+  icon = icon || defaultIcon;
 
   return <FontAwesomeIcon icon={icon} size={size} />;
 };
 
 Icon.propTypes = {
-  iconName: PropTypes.string,
+  iconName: PropTypes.string.isRequired,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  iconType: PropTypes.oneOf(['solid', 'brand']),
 };
 
 Icon.defaultProps = {
-  iconName: 'question-circle',
-  size: '1x',
+  size: '1x', // Default size
+  iconType: 'solid', // Default icon type
 };
 
 export default Icon;

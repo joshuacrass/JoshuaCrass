@@ -106,7 +106,7 @@ const SectionContent = styled(animated.div)`
   }
 `;
 
-const Section = ({ title, color, icon }) => {
+const Section = ({ title, color, icon, iconType }) => {
   const [visible, setVisible] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
@@ -131,7 +131,7 @@ const Section = ({ title, color, icon }) => {
   return (
     <SectionWrapper>
       <SectionIcon color={color} onClick={() => setVisible(!visible)}>
-        <Icon iconName={icon} size='2x' />
+        <Icon iconName={icon} iconType={iconType} size='2x' />
       </SectionIcon>
       <SectionMarker visible={visible} color={color} />
       <SectionMain>
@@ -175,12 +175,14 @@ Section.propTypes = {
   title: PropTypes.string,
   color: PropTypes.string,
   icon: PropTypes.string,
+  iconType: PropTypes.oneOf(['solid', 'brand']),
 };
 
 Section.defaultProps = {
   title: 'Section Title',
   color: '#000000',
   icon: 'QuestionCircle',
+  iconType: 'solid',
 };
 
 export default Section;
