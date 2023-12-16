@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Section from './components/Sections';
+import ProfileSection from './components/ProfileSection';
 import Header from './components/Header';
 
 const Container = styled.div`
@@ -20,30 +21,29 @@ const SectionWrapper = styled.div`
 `;
 
 const sections = [
-  { id: 1, name: 'intro', color: '#1bc9e4', icon: 'User', iconType: 'solid' },
   {
-    id: 2,
+    id: 1,
     name: 'experience',
     color: '#ff754a',
     icon: 'Bars',
     iconType: 'solid',
   },
   {
-    id: 3,
+    id: 2,
     name: 'education',
     color: '#1be489',
     icon: 'School',
     iconType: 'solid',
   },
   {
-    id: 4,
+    id: 3,
     name: 'skills',
     color: '#ffc455',
     icon: 'Toolbox',
     iconType: 'solid',
   },
   {
-    id: 6,
+    id: 4,
     name: 'contact',
     color: '#ff3430',
     icon: 'Phone',
@@ -54,6 +54,7 @@ const sections = [
 const App = () => (
   <Container>
     <Header />
+    <ProfileSection />
     {sections.map((section) => (
       <SectionWrapper>
         <Section
